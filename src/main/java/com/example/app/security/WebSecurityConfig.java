@@ -43,12 +43,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				.antMatchers(HttpMethod.POST, "/api/v1/account").permitAll()
-				.antMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
-				.anyRequest().authenticated().and().csrf().disable().sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-				.and().addFilterBefore(new AuthTokenFilter(jwtService, userService), UsernamePasswordAuthenticationFilter.class);
+		
+		
+		
+			http.authorizeRequests()
+			.antMatchers(HttpMethod.POST, "/api/v1/account").permitAll()
+			.antMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
+			.anyRequest().authenticated()
+			.and().csrf().disable()
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+			.and().addFilterBefore(new AuthTokenFilter(jwtService, userService), UsernamePasswordAuthenticationFilter.class);
 
 	}
 

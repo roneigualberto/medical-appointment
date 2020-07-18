@@ -16,14 +16,13 @@ public class DoctorService {
 	private DoctorRepository doctorRepository;
 
 	public Doctor save(Doctor doctor) {
-
 		return doctorRepository.save(doctor);
 	}
 
-	public  List<Doctor> findAll() {
+	public List<Doctor> findAll() {
 		return this.doctorRepository.findAll();
 	}
-	
+
 	public Optional<Doctor> findById(Long id) {
 		return doctorRepository.findById(id);
 	}

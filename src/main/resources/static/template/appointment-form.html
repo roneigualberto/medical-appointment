@@ -2,8 +2,8 @@
 
     <nav aria-label="breadcrumb" class="mt-2">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Appointment</a></li>
-            <li class="breadcrumb-item"><a href="#">Create</a></li>
+            <li class="breadcrumb-item">Appointment</li>
+            <li class="breadcrumb-item">Create</li>
 
         </ol>
     </nav>
@@ -59,7 +59,7 @@
 
     
         <div class="form-group">
-            <button  class="btn btn-success btn-block" ng-click="create(appointmentForm, appointment)"
+            <button ng-disabled="loading"  class="btn btn-success btn-block" ng-click="create(appointmentForm, appointment)"
                 type="submit">Register</button>
         </div>
 

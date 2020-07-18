@@ -33,8 +33,11 @@ public class SwaggerConfig {
 	public ApiInfo apiInfo() {
 
 		Contact contato = new Contact("", "", "");
-		return new ApiInfoBuilder().title("API Title").description("API Documentation").version("1.0").contact(contato)
-				.license("Apache 2.0").licenseUrl("http://www.apache.org/licences/LICENSE-2.0").build();
+		return new ApiInfoBuilder().title("API Medical Appointment")
+				.description("Simple Scheduling Medical Appointments")
+				.version("1.0").contact(contato)
+				.license("Apache 2.0")
+				.licenseUrl("http://www.apache.org/licences/LICENSE-2.0").build();
 	}
 
 	@Bean

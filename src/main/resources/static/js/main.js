@@ -6,7 +6,7 @@ app.controller('main.ctrl', function ($scope) {
     $scope.logout = () => {
 
         localStorage.removeItem('auth_token');
-        location.href = 'index.html';
+        location.href = '/';
 
     };
 });
@@ -45,7 +45,7 @@ app.factory("AuthInterceptor", function ($q) {
         const token = localStorage.getItem('auth_token');
 
         if (!token) {
-            location.href = 'index.html';
+            location.href = '/';
         }
 
         config.headers['Authorization'] = 'Bearer ' + token;
@@ -59,7 +59,7 @@ app.factory("AuthInterceptor", function ($q) {
 
         if (error.status == 401 || error.status == 403) {
             localStorage.removeItem('auth_token');
-            location.href = 'index.html';
+            location.href = '/';
         }
         return $q.reject(error);
     };

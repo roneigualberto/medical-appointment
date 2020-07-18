@@ -1,0 +1,40 @@
+<div>
+
+    <nav aria-label="breadcrumb" class="mt-2">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Doctor</a></li>
+            <li class="breadcrumb-item"><a href="#">List</a></li>
+
+        </ol>
+    </nav>
+
+
+
+    <form class="default-form" name="doctorForm" autocomplete="off">
+        <h4>Doctors</h4>
+        <hr>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Speciality</th>
+                    <th scope="col">Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="doctor in doctors">
+                    <td>{{doctor.id}}</td>
+                    <td>{{doctor.name}}</td>
+                    <td>{{doctor.speciality}}</td>
+                    <td>{{doctor.createdAt | date}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </form>
+
+</div>

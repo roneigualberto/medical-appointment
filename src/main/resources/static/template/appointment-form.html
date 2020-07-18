@@ -1,0 +1,70 @@
+<div>
+
+    <nav aria-label="breadcrumb" class="mt-2">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Appointment</a></li>
+            <li class="breadcrumb-item"><a href="#">Create</a></li>
+
+        </ol>
+    </nav>
+
+    
+
+    <form class="default-form" name="appointmentForm" autocomplete="off">
+        <h4>New Appointment</h4>
+        <hr>
+
+        <div class="alert alert-danger" role="alert" ng-show="errorMessage">
+            {{errorMessage}}
+        </div>
+
+        <div class="alert alert-success" role="alert" ng-show="okMessage">
+            {{okMessage}}
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-sm-8 form-group">
+                <label for="doctor">Doctor</label>
+               
+                <select name="doctor" id="doctor" 
+                    ng-model="appointment.doctor" ng-required="true"
+                    ng-class="{'is-invalid': (appointmentForm.doctor.$dirty || appointmentForm.$submitted)  && appointmentForm.doctor.$invalid}"
+                                        class="form-control" ng-options="doctor as doctor.name + ' ('+doctor.speciality+')' for doctor in doctors track by doctor.id">
+                    <option value="">-- Select Doctor --</option>
+                </select>
+    
+                <div class="invalid-feedback" ng-messages="appointmentForm.name.$error">
+                    <span ng-messages-include="error-messages"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-3 form-group">
+                <label for="startDate">Start Date</label>
+                <input type="datetime-local" name="startDate" id="startDate" 
+                
+                        ng-model="appointment.startDate" 
+                    ng-class="{'is-invalid': (appointmentForm.startDate.$dirty || appointmentForm.$submitted)  && appointmentForm.startDate.$invalid}"
+                    class="form-control" ng-required="true" maxlength="255">
+    
+                <div class="invalid-feedback" ng-messages="appointmentForm.startDate.$error">
+                    <span ng-messages-include="error-messages"></span>
+                </div>
+            </div>
+    
+        </div>
+
+    
+        <div class="form-group">
+            <button  class="btn btn-success btn-block" ng-click="create(appointmentForm, appointment)"
+                type="submit">Register</button>
+        </div>
+
+
+
+    </form>
+
+</div>

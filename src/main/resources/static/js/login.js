@@ -8,7 +8,7 @@ app.controller('main.ctrl', function($scope) {
 
 
 app.constant('constants', {
-    BASE_URL: 'http://localhost:8080',
+    BASE_URL: '',
     
 });
 

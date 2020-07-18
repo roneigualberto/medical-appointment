@@ -1,0 +1,61 @@
+<div>
+
+    <nav aria-label="breadcrumb" class="mt-2">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Doctor</a></li>
+            <li class="breadcrumb-item"><a href="#">Create</a></li>
+
+        </ol>
+    </nav>
+
+    
+
+    <form class="default-form" name="doctorForm" autocomplete="off">
+        <h4>New Doctor</h4>
+        <hr>
+
+        <div class="alert alert-danger" role="alert" ng-show="errorMessage">
+            {{errorMessage}}
+        </div>
+
+        <div class="alert alert-success" role="alert" ng-show="okMessage">
+            {{okMessage}}
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="name" name="name" id="name" ng-model="doctor.name"
+                ng-class="{'is-invalid': (doctorForm.name.$dirty || doctorForm.$submitted)  && doctorForm.name.$invalid}"
+                class="form-control" ng-required="true" maxlength="255">
+
+            <div class="invalid-feedback" ng-messages="doctorForm.name.$error">
+                <span ng-messages-include="error-messages"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="speciality">Speciality</label>
+            <input type="speciality" name="speciality" id="speciality" ng-model="doctor.speciality" ng-model-options="{updateOn:'blur'}"
+                ng-class="{'is-invalid': (doctorForm.speciality.$dirty || doctorForm.$submitted)  && doctorForm.speciality.$invalid}"
+                class="form-control" ng-required="true" maxlength="255">
+
+            <div class="invalid-feedback" ng-messages="signupForm.speciality.$error">
+                <span ng-messages-include="error-messages"></span>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="form-group">
+            <button ng-disabled="loading" class="btn btn-success btn-block" ng-click="create(doctorForm, doctor)"
+                type="submit">Register</button>
+        </div>
+
+
+
+    </form>
+
+</div>

@@ -1,0 +1,43 @@
+<div>
+
+    <nav aria-label="breadcrumb" class="mt-2">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Appointment</a></li>
+            <li class="breadcrumb-item"><a href="#">List</a></li>
+
+        </ol>
+    </nav>
+
+
+
+    <form class="default-form" name="doctorForm" autocomplete="off">
+        <h4>Appointments</h4>
+        <hr>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Doctor</th>
+                    <th scope="col">Speciality</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="appointment in appointments">
+                    <td>{{appointment.id}}</td>
+                    <td>{{appointment.startDate | date:'medium'}}</td>
+                    <td>{{appointment.doctor.name}}</td>
+                    <td>{{appointment.doctor.speciality}}</td>
+                   
+
+
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </form>
+
+</div>

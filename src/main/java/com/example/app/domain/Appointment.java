@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +18,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "appointment")
+@Table(name = "appointment", uniqueConstraints={@UniqueConstraint(columnNames={"doctor_id", "start_date"})})
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

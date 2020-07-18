@@ -1,0 +1,65 @@
+<div>
+
+    <form class="form-sign-up" name="signupForm" autocomplete="off">
+        <div class="text-center mb-4">
+            
+            <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+            <p>Already have an account?   <a href="#!/sign-in">Sign In</a></a></p>
+        </div>
+
+        <div class="alert alert-danger" role="alert" ng-show="errorMessage">
+           {{errorMessage}}
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="name" name="name" id="name" ng-model="account.name"
+                ng-class="{'is-invalid': (signupForm.name.$dirty || signupForm.$submitted)  && signupForm.name.$invalid}"
+                class="form-control" ng-required="true">
+
+            <div class="invalid-feedback" ng-messages="signupForm.name.$error">
+                <span ng-messages-include="error-messages"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" ng-model="account.email" ng-model-options="{updateOn:'blur'}"
+                ng-class="{'is-invalid': (signupForm.email.$dirty || signupForm.$submitted)  && signupForm.email.$invalid}"
+                class="form-control" ng-required="true">
+
+            <div class="invalid-feedback" ng-messages="signupForm.email.$error">
+                <span ng-messages-include="error-messages"></span>
+            </div>
+        </div>
+
+       
+
+
+        <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password"
+             ng-required="true"
+             ng-model="account.password"
+             name="pwd" id="pwd" class="form-control" 
+             ng-class="{'is-invalid': (signupForm.pwd.$dirty || signupForm.$submitted)  && signupForm.pwd.$invalid}"
+            >
+          
+           
+            <div class="invalid-feedback" ng-messages="signupForm.pwd.$error">
+                <span ng-messages-include="error-messages"></span>
+            </div>
+        </div>
+
+       
+        <div class="form-group">
+            <button class="btn btn-primary btn-block"
+                ng-click="login(signupForm, account)"
+            type="submit">Register</button>
+        </div>
+
+       
+        
+    </form>
+
+</div>

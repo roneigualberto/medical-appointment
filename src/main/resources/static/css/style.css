@@ -1,0 +1,14 @@
+.form-sign-in,.form-sign-up {
+ width: 100%;
+ max-width: 380px;
+ margin: auto;
+ margin-top: 100px;
+ border-radius: 5px;
+ padding: 20px;
+ background-color: #fff;
+ box-shadow: 0 1px 2px #c2c2c2
+}
+
+body {
+ background-color: #f7f7f8;
+}

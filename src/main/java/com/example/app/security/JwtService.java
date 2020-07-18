@@ -31,6 +31,8 @@ public class JwtService {
 				.setIssuer("API Medical Appointment")
 				.setSubject(user.getId().toString())
 				.setIssuedAt(today)
+				.claim("email", user.getEmail())
+				.claim("name", user.getName())
 				.setExpiration(expirationDate)
 				.signWith(SignatureAlgorithm.HS256, secret)
 				.compact();
